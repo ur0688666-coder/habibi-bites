@@ -1,0 +1,8 @@
+{
+  "name": "Habibi Bites",
+  "description": "Modern, luxurious Pakistani restaurant website with authentic bites, fresh zinger wraps, burgers, and an easy online ordering experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

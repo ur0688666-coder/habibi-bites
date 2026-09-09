@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Profile information for authenticated diners and customers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "defaultAddress": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email", "createdAt"]
+    },
+    "CustomerOrder": {
+      "title": "CustomerOrder",
+      "description": "Food order submitted to Habibi Bites",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "referenceId": { "type": "string" },
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "deliveryLocation": { "type": "string" },
+        "selectedItemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "selectedSize": { "type": "string" },
+        "price": { "type": "number" },
+        "deliveryChefNote": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["referenceId", "customerName", "phoneNumber", "deliveryLocation", "itemName", "price", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document owned by the authenticated user"
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": "CustomerOrder",
+      "description": "Order records placed by the authenticated user"
+    }
+  }
+}
